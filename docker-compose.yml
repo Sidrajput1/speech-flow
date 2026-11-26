@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: speechflow-postgres
+
+    environment:
+      POSTGRES_USER: speechflow
+      POSTGRES_PASSWORD: speechflow_dev_password
+      POSTGRES_DB: speechflow
+
+    ports:
+      - "127.0.0.1:5433:5432"
+
+    volumes:
+      - speechflow_pgdata:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U speechflow -d speechflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+    restart: unless-stopped
+
+volumes:
+  speechflow_pgdata:

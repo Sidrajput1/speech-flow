@@ -1,0 +1,35 @@
+# Frontend
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# AI model files
+models_cache/
+*.safetensors
+*.bin
+*.onnx
+
+# Local audio recordings
+recordings/
+
+# Logs
+*.log
+
+# Operating system
+.DS_Store
+Thumbs.db
